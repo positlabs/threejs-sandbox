@@ -1,0 +1,17 @@
+{
+  "name": "threejs-sandbox",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/positlabs/threejs-sandbox",
+  "authors": [
+    "Josh Beckwith <josh.beckwith@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
