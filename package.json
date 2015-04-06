@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "browserify": "^9.0.7",
+    "browserify-shader": "0.0.2",
+    "gulp": "^3.8.11",
+    "minifyify": "^6.4.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.1.0"
+  },
+  "name": "threejs-sandbox",
+  "description": "three.js sandbox",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/positlabs/threejs-sandbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/positlabs/threejs-sandbox/issues"
+  },
+  "homepage": "https://github.com/positlabs/threejs-sandbox"
+}
