@@ -62,7 +62,7 @@ function render() {
 	var delta = clock.getDelta(),
 		time = clock.getElapsedTime() * 10;
 
-	material.uniforms['time'].value = time *.01;	
+	material.uniforms['time'].value = time *.005;	
 
 	controls.movementSpeed = 3000 * delta;
 	controls.update( delta );
