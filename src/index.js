@@ -1,6 +1,6 @@
 window.THREE = require('threejs/build/three.js');
 require("threejs/examples/js/controls/FlyControls");
-console.log(THREE)
+var glslify = require('glslify');
 
 var container = document.body, 
 renderer, 
@@ -29,13 +29,16 @@ controls.rollSpeed = Math.PI / 12;
 controls.autoForward = false;
 controls.dragToLook = false;
 
+var vertexShader = glslify('./shaders/vertex-noise.glsl');
+var fragmentShader = glslify('./shaders/fragment-fog.glsl');
+
 // material = new THREE.MeshPhongMaterial( {
 material = new THREE.ShaderMaterial( {
 	wireframe: true,
 	// wireframeLinewidth: 1,
 	side: THREE.DoubleSide,
-	vertexShader: require('shaders/vertex-noise.glsl')(),
-	fragmentShader: require('shaders/fragment-depth.glsl')(),
+	vertexShader: vertexShader,
+	fragmentShader: fragmentShader,
 	uniforms: {
 		time:   { type: "f", value: 1.0 },
 		scale:  { type: "v2", value: new THREE.Vector2( .015, .015 ) },
@@ -43,7 +46,7 @@ material = new THREE.ShaderMaterial( {
 	}
 } );
 
-var geometry = new THREE.IcosahedronGeometry( 60, 4 );
+var geometry = new THREE.IcosahedronGeometry( 120, 4 );
 console.log(geometry);
 
 // create a sphere and assign the material
@@ -62,7 +65,7 @@ function render() {
 	var delta = clock.getDelta(),
 		time = clock.getElapsedTime() * 10;
 
-	material.uniforms['time'].value = time *.005;	
+	material.uniforms['time'].value = time *.0005;	
 
 	controls.movementSpeed = 3000 * delta;
 	controls.update( delta );

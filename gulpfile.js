@@ -3,7 +3,8 @@ var gulp = require('gulp');
 var browserify 			= require('browserify');			// http://browserify.org/
 var watchify 			= require('watchify');				// https://github.com/ben-ng/minifyify
 var source 				= require('vinyl-source-stream');
-var browserifyShader 	= require("browserify-shader")
+// var browserifyShader 	= require("browserify-shader");
+var glslify 			= require("glslify");
 
 
 function scriptTask(){
@@ -27,9 +28,11 @@ function scriptTask(){
 	bundler.add(src);
 
 	return bundler
-	  	.transform(browserifyShader)
+	  	// .transform(glslify)
+	  	// .transform(browserifyShader)
 		.bundle()
 		.on('error', function(err){
+			console.log('error', err.message);
 			this.emit('end');
 		})
 		.pipe(source('index.js'))

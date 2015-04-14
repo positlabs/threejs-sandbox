@@ -2,10 +2,16 @@
   "dependencies": {
     "browserify": "^9.0.7",
     "browserify-shader": "0.0.2",
+    "glsl-fog": "0.0.1",
+    "glsl-noise": "0.0.0",
+    "glslify": "^2.1.1",
     "gulp": "^3.8.11",
     "minifyify": "^6.4.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.1.0"
+  },
+  "browserify": {
+    "transform": ["glslify"]
   },
   "name": "threejs-sandbox",
   "description": "three.js sandbox",
